@@ -38,14 +38,15 @@ const animateTimer = createTimerAnimator();
 inputEl.addEventListener('input', () => {
   // Очистите input так, чтобы в значении
   // оставались только числа
-  const input = inputEl.value.replace(/\D/g, '');
-  if (isNaN(input) || input === '') {
-    inputEl.value = 'Введите число';
-    buttonEl.disabled = true;
-  } else {
-    inputEl.value = input;
-    buttonEl.disabled = false;
-  }
+  inputEl.value = inputEl.value.replace(/\D/g, '');
+  // const input = inputEl.value.replace(/\D/g, '');
+  // if (isNaN(input) || input === '') {
+  //   inputEl.value = 'Введите число';
+  //   buttonEl.disabled = true;
+  // } else {
+  //   inputEl.value = input;
+  //   buttonEl.disabled = false;
+  // }
 });
 
 buttonEl.addEventListener('click', () => {
@@ -54,5 +55,4 @@ buttonEl.addEventListener('click', () => {
   animateTimer(seconds);
 
   inputEl.value = '';
-  buttonEl.disabled = true;
 });
